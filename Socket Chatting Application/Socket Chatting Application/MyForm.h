@@ -93,6 +93,7 @@ namespace SocketChattingApplication {
 			this->richTextBox1->TabIndex = 3;
 			this->richTextBox1->Text = L"";
 			this->richTextBox1->TextChanged += gcnew System::EventHandler(this, &MyForm::richTextBox1_TextChanged);
+			this->richTextBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::mainTextBox_KeyPress);
 			// 
 			// MyForm
 			// 
@@ -114,7 +115,12 @@ namespace SocketChattingApplication {
 
 	}
 	private: System::Void richTextBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-
+		
 	}
+
+	private: System::Void mainTextBox_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+		e->Handled = true;
+	}
+
 	};
 }
